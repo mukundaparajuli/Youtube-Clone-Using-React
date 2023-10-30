@@ -14,7 +14,7 @@ const ButtonList = () => {
     "Cricket",
     "Spirituality",
     "Comedy",
-    "MovieCritics",
+    "Investment",
     "React",
   ];
   return (
