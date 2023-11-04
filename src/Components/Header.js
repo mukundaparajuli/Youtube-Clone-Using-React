@@ -100,11 +100,11 @@ const Header = () => {
         )}
       </div>
       <div>
-        <img
+       <img
           className="h-8 m-4 col-span-2 self-center"
           src="https://static.vecteezy.com/system/resources/previews/019/879/186/original/user-icon-on-transparent-background-free-png.png"
           alt="user "
-        />
+        /> 
       </div>
     </div>
   );
