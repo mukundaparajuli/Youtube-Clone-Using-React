@@ -71,7 +71,7 @@ const Header = () => {
             onChange={(e) => setSearchQuery(e.target.value)}
             onFocus={() => setShowSuggestion(true)}
             onBlur={() => setShowSuggestion(false)}
-            onPointerOut={() => setShowSuggestion(false)}
+            // onPointerOut={() => setShowSuggestion(false)}
           />
           <button className="border-solid border-gray-500 border-2 self-center  rounded-r-full h-10 p-1  bg-gray-300 w-20">
             <img
@@ -84,7 +84,7 @@ const Header = () => {
         {showSuggestion && (
           <div
             className=" fixed flex justify-self-center
-        px-4 mx-40 w-[41%] bg-white h-auto border border-2 border-gray-500 rounded-xl shadow-sm on-focus"
+        px-4 mx-40 w-[41%] bg-white h-auto border-2 border-gray-500 rounded-xl shadow-sm on-focus"
           >
             <ul className="w-[100%]">
               {suggestions.map((suggestion) => (
