@@ -38,7 +38,7 @@ const WatchVideo = () => {
             className="border-2 border-gray-500 rounded-lg bg-gray-300"
             width="1000"
             height="552"
-            src={"https://www.youtube.com/embed/" + searchParams.get("v")}
+            src={"https://www.youtube.com/embed/" + searchParams.get("v")+"?autoplay=1&mute=1"}
             title="YouTube video player"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
