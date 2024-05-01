@@ -1,5 +1,5 @@
 import React from "react";
-import { comments } from "./CommentsConfig";
+import { comments } from "../config/CommentsConfig";
 function Comment({ data }) {
   return (
     <div className="flex  rounded-lg bg-gray-100 m-4 shadow-md">

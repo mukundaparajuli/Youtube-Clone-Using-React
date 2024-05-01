@@ -1,7 +1,7 @@
 import "./App.css";
 import "./index.css";
 import Header from "./Components/Header";
-import Store from "./utils/Store";
+import Store from "./store/Store";
 import { Provider } from "react-redux";
 import Body from "./Components/Body";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";

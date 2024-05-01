@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { closeMenu } from "../utils/AppSlice";
+import { closeMenu } from "../store/AppSlice";
 import { useSearchParams } from "react-router-dom";
 import CommentContainer from "./Comment";
 import LiveChat from "./LiveChat";
-import { addMessage } from "../utils/chatSlice";
-import { YOUTUBE_VIDEOS_APIS } from "../utils/Config";
+import { addMessage } from "../store/chatSlice";
+import { YOUTUBE_VIDEOS_APIS } from "../config/Config";
 import VideoSuggestion from "../Components/VideoSuggestion";
 import DescriptionBox from "./DescriptionBox";
 
@@ -28,7 +28,7 @@ const WatchVideo = () => {
   useEffect(() => {
     dispatch(closeMenu());
     getVideos();
-  },[]);
+  }, []);
 
   return (
     <div>
@@ -38,7 +38,7 @@ const WatchVideo = () => {
             className="border-2 border-gray-500 rounded-lg bg-gray-300"
             width="1000"
             height="552"
-            src={"https://www.youtube.com/embed/" + searchParams.get("v")+"?autoplay=1&mute=1"}
+            src={"https://www.youtube.com/embed/" + searchParams.get("v") + "?autoplay=1&mute=1"}
             title="YouTube video player"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import ChatMessage from "./ChatMessage";
 import { useDispatch, useSelector } from "react-redux";
-import { addMessage } from "../utils/chatSlice";
+import { addMessage } from "../store/chatSlice";
 import generateRandomString from "../utils/textGenerator";
 import generateRandomName from "../utils/nameGenerator";
 export const LiveChat = () => {
@@ -24,7 +24,7 @@ export const LiveChat = () => {
   });
   return (
     <div className=" flex flex-col-reverse ">
-      {chatMessages.map((c,i) => (
+      {chatMessages.map((c, i) => (
         <ChatMessage key={i} name={c.name} message={c.text} />
       ))}
     </div>

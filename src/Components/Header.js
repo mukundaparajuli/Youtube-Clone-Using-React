@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleMenu } from "../utils/AppSlice";
-import { YOUTUBE_SUGESSTION_API } from "../utils/Config";
+import { toggleMenu } from "../store/AppSlice";
+import { YOUTUBE_SUGESSTION_API } from "../config/Config";
 import { cacheResults } from "./searchSlice";
 
 const Header = () => {
@@ -31,18 +31,22 @@ const Header = () => {
 
   // getSearchSugestion Function
   const getSearchSugestion = async () => {
-    const data = await fetch(YOUTUBE_SUGESSTION_API + searchQuery);
-    const json = await data.json();
-    console.log(json);
-    setSuggestions(json[1]);
-
-    // dispatch
-    dispatch(
-      cacheResults({
-        [searchQuery]: json[1],
-      })
-    );
+    try {
+      const data = await fetch(YOUTUBE_SUGESSTION_API + searchQuery);
+      const json = await data.json();
+      console.log(json);
+      setSuggestions(json[1]);
+      // dispatch
+      dispatch(
+        cacheResults({
+          [searchQuery]: json[1],
+        })
+      );
+    } catch {
+      console.log("Error while fetching search results.");
+    }
   };
+
   return (
     <div className="grid grid-flow-col h-auto bg-white w-screen shadow ">
       <div className="flex col-span-2  ">
@@ -71,7 +75,7 @@ const Header = () => {
             onChange={(e) => setSearchQuery(e.target.value)}
             onFocus={() => setShowSuggestion(true)}
             onBlur={() => setShowSuggestion(false)}
-            // onPointerOut={() => setShowSuggestion(false)}
+          // onPointerOut={() => setShowSuggestion(false)}
           />
           <button className="border-solid border-gray-500 border-2 self-center  rounded-r-full h-10 p-1  bg-gray-300 w-20">
             <img
@@ -100,11 +104,11 @@ const Header = () => {
         )}
       </div>
       <div>
-       <img
+        <img
           className="h-8 m-4 col-span-2 self-center"
           src="https://static.vecteezy.com/system/resources/previews/019/879/186/original/user-icon-on-transparent-background-free-png.png"
           alt="user "
-        /> 
+        />
       </div>
     </div>
   );

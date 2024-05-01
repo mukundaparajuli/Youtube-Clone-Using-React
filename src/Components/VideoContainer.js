@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { YOUTUBE_VIDEOS_APIS } from "../utils/Config";
+import { YOUTUBE_VIDEOS_APIS } from "../config/Config";
 import { VideoCard, AdVideo } from "./VideoCard";
 import { Link } from "react-router-dom";
 import ButtonList from "./ButtonList";
