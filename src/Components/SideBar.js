@@ -1,77 +1,101 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { FaHome, FaCompass, FaHistory, FaPlayCircle, FaRegClock, FaMusic, FaGamepad, FaTrophy, FaUser } from "react-icons/fa";
 
 const UnCollapsedSideBar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
 
   if (!isMenuOpen) return null;
-  return (
-    <div className="w-[400px] h-[100vh] overflow-auto shadow-lg">
-      <div className="main p-2 border-b-2  ">
-        <ul className=" text-lg ">
 
-          <Link to="/">
-            <li className="p-2 flex items-center gap-4">
-              <div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-11 h-11 p-2">
-                  <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
-                  <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
-                </svg>
-              </div>
-              <div>Home</div>
-            </li>
+  return (
+    <div className="w-[300px] h-[100vh] overflow-y-auto  shadow-lg bg-white">
+      {/* Main Navigation */}
+      <div className="main p-2 border-b-[1px] border-gray-300 ">
+        <div className="text-md">
+          <Link to="/" className="w-full">
+            <div className="p-2 flex items-center gap-4 hover:bg-gray-100 rounded-lg w-full">
+              <FaHome className="w-6 h-6 " />
+              <span>Home</span>
+            </div>
           </Link>
 
-
-          <li className="p-2 flex items-center gap-4">
-            <div><img src="https://storage.googleapis.com/support-forums-api/attachment/thread-192129487-1835648349494362801.png" alt="" srcset="" className="h-12" />
+          <Link to="/shorts">
+            <div className=" flex items-center gap-2 hover:bg-gray-100 rounded-lg w-full">
+              <img
+                src="https://storage.googleapis.com/support-forums-api/attachment/thread-192129487-1835648349494362801.png"
+                alt="Shorts"
+                className="h-10 w-10"
+              />
+              <span>Shorts</span>
             </div>
-            <div>Shorts</div>
-          </li>
+          </Link>
 
-
-          <li className="p-2 flex items-center gap-4">
-            <div><img src="https://icons.iconarchive.com/icons/pictogrammers/material/512/youtube-subscription-icon.png" alt="" srcset="" className="h-6 m-2" />
+          <Link to="/subscriptions">
+            <div className="p-2 flex items-center gap-4 hover:bg-gray-100 rounded-lg cursor-pointer">
+              <img
+                src="https://icons.iconarchive.com/icons/pictogrammers/material/512/youtube-subscription-icon.png"
+                alt="Subscriptions"
+                className="h-6 w-6"
+              />
+              <span>Subscriptions</span>
             </div>
-            <div>Subscriptions</div>
-          </li>
-
-        </ul>
+          </Link>
+        </div>
       </div>
 
-
-      <div className="main p-2">
-        <h1 className="text-xl">You &gt;</h1>
+      {/* Library Section */}
+      <div className="main p-2 border-b-[1px] border-gray-300">
         <ul className="text-md">
-          <li className="p-2">Your Channel</li>
-          <li className="p-2">History</li>
-          <li className="p-2">Library</li>
-          <li className="p-2">Your Videos</li>
-          <li className="p-2">Watch Later</li>
-          <li className="p-2">Your Clips</li>
+          <div className="p-2 flex items-center gap-4 hover:bg-gray-100 rounded-lg cursor-pointer">
+            <FaPlayCircle className="w-6 h-6 " />
+            <span>Your Videos</span>
+          </div>
+          <div className="p-2 flex items-center gap-4 hover:bg-gray-100 rounded-lg cursor-pointer">
+            <FaHistory className="w-6 h-6 " />
+            <span>History</span>
+          </div>
+          <div className="p-2 flex items-center gap-4 hover:bg-gray-100 rounded-lg cursor-pointer">
+            <FaRegClock className="w-6 h-6 " />
+            <span>Watch Later</span>
+          </div>
+          <div className="p-2 flex items-center gap-4 hover:bg-gray-100 rounded-lg cursor-pointer">
+            <FaPlayCircle className="w-6 h-6 " />
+            <span>Your Clips</span>
+          </div>
         </ul>
       </div>
-      <div className="main p-2 border-b-4 border-solid border-black">
-        <h1 className="text-[22px]">Subscriptions</h1>
-        <ul className="font-bold">
-          <li className="p-2">Random Channel</li>
-          <li className="p-2">Random Channel</li>
-          <li className="p-2">Random Channel</li>
-          <li className="p-2">Random Channel</li>
-          <li className="p-2">Random Channel</li>
-          <li className="p-2">Random Channel</li>
-          <li className="p-2">Random Channel</li>
-          <li className="p-2">Random Channel</li>
+
+      {/* Subscriptions */}
+      <div className="main p-2 border-b-[1px] border-gray-300">
+        <h1 className="text-md font-semibold mb-2">Subscriptions</h1>
+        <ul className="text-md font-bold">
+          <div className="p-2 hover:bg-gray-100 rounded-lg flex gap-2 items-center cursor-pointer"><FaUser /> Random Channel</div>
+          <div className="p-2 hover:bg-gray-100 rounded-lg flex gap-2 items-center cursor-pointer"><FaUser /> Random Channel</div>
+          <div className="p-2 hover:bg-gray-100 rounded-lg flex gap-2 items-center cursor-pointer"><FaUser /> Random Channel</div>
         </ul>
       </div>
-      <div className="main p-2 border-b-4 border-solid border-black">
-        <h1 className="text-[22px]">Explore</h1>
-        <ul className="font-bold">
-          <li className="p-2">Trending</li>
-          <li className="p-2">Music</li>
-          <li className="p-2">Gaming</li>
-          <li className="p-2">Sports</li>
+
+      {/* Explore Section */}
+      <div className="main p-2">
+        <h1 className="text-md font-semibold mb-2">Explore</h1>
+        <ul className="text-md font-bold">
+          <div className="p-2 flex items-center gap-4 hover:bg-gray-100 rounded-lg cursor-pointer">
+            <FaCompass className="w-6 h-6 " />
+            <span>Trending</span>
+          </div>
+          <div className="p-2 flex items-center gap-4 hover:bg-gray-100 rounded-lg cursor-pointer">
+            <FaMusic className="w-6 h-6 " />
+            <span>Music</span>
+          </div>
+          <div className="p-2 flex items-center gap-4 hover:bg-gray-100 rounded-lg cursor-pointer">
+            <FaGamepad className="w-6 h-6 " />
+            <span>Gaming</span>
+          </div>
+          <div className="p-2 flex items-center gap-4 hover:bg-gray-100 rounded-lg cursor-pointer">
+            <FaTrophy className="w-6 h-6 " />
+            <span>Sports</span>
+          </div>
         </ul>
       </div>
     </div>

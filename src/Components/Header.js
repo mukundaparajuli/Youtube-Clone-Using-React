@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../store/AppSlice";
 import { YOUTUBE_SUGESSTION_API } from "../config/Config";
 import { cacheResults } from "./searchSlice";
+import { FaBars } from "react-icons/fa";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -50,14 +51,7 @@ const Header = () => {
   return (
     <div className="grid grid-flow-col h-auto bg-white w-screen shadow ">
       <div className="flex col-span-2  ">
-        <img
-          onClick={() => {
-            toggleMenuHandler();
-          }}
-          className="h-10 self-center col-span-1 m-2"
-          src="https://cdn.iconscout.com/icon/free/png-256/free-hamburger-menu-462145.png?f=webp"
-          alt="Menu"
-        />
+        <FaBars className="h-6 w-6 self-center col-span-1 m-2" />
         <a href="/">
           <img
             className="h-16 self-center col-span-3 m-2"
@@ -75,7 +69,7 @@ const Header = () => {
             onChange={(e) => setSearchQuery(e.target.value)}
             onFocus={() => setShowSuggestion(true)}
             onBlur={() => setShowSuggestion(false)}
-          // onPointerOut={() => setShowSuggestion(false)}
+            onPointerOut={() => setShowSuggestion(false)}
           />
           <button className="border-solid border-gray-500 border-2 self-center  rounded-r-full h-10 p-1  bg-gray-300 w-20">
             <img
