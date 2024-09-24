@@ -23,7 +23,7 @@ export const LiveChat = () => {
     };
   });
   return (
-    <div className=" flex flex-col-reverse ">
+    <div className=" flex flex-col-reverse">
       {chatMessages.map((c, i) => (
         <ChatMessage key={i} name={c.name} message={c.text} />
       ))}

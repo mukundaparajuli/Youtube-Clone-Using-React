@@ -9,7 +9,7 @@ const UnCollapsedSideBar = () => {
   if (!isMenuOpen) return null;
 
   return (
-    <div className="w-[300px] h-[100vh] overflow-y-auto  shadow-lg bg-white">
+    <div className="w-[300px] h-[100vh] overflow-y-auto  shadow-lg text-gray-800">
       {/* Main Navigation */}
       <div className="main p-2 border-b-[1px] border-gray-300 ">
         <div className="text-md">
@@ -70,9 +70,12 @@ const UnCollapsedSideBar = () => {
       <div className="main p-2 border-b-[1px] border-gray-300">
         <h1 className="text-md font-semibold mb-2">Subscriptions</h1>
         <ul className="text-md font-bold">
-          <div className="p-2 hover:bg-gray-100 rounded-lg flex gap-2 items-center cursor-pointer"><FaUser /> Random Channel</div>
-          <div className="p-2 hover:bg-gray-100 rounded-lg flex gap-2 items-center cursor-pointer"><FaUser /> Random Channel</div>
-          <div className="p-2 hover:bg-gray-100 rounded-lg flex gap-2 items-center cursor-pointer"><FaUser /> Random Channel</div>
+          <div className="p-2 hover:bg-gray-100 rounded-lg flex gap-2 items-center cursor-pointer"><FaUser />  Channel Name </div>
+          <div className="p-2 hover:bg-gray-100 rounded-lg flex gap-2 items-center cursor-pointer"><FaUser />  Channel Name </div>
+          <div className="p-2 hover:bg-gray-100 rounded-lg flex gap-2 items-center cursor-pointer"><FaUser />  Channel Name </div>
+          <div className="p-2 hover:bg-gray-100 rounded-lg flex gap-2 items-center cursor-pointer"><FaUser />  Channel Name </div>
+          <div className="p-2 hover:bg-gray-100 rounded-lg flex gap-2 items-center cursor-pointer"><FaUser />  Channel Name </div>
+          <div className="p-2 hover:bg-gray-100 rounded-lg flex gap-2 items-center cursor-pointer"><FaUser />  Channel Name </div>
         </ul>
       </div>
 
@@ -91,6 +94,10 @@ const UnCollapsedSideBar = () => {
           <div className="p-2 flex items-center gap-4 hover:bg-gray-100 rounded-lg cursor-pointer">
             <FaGamepad className="w-6 h-6 " />
             <span>Gaming</span>
+          </div>
+          <div className="p-2 flex items-center gap-4 hover:bg-gray-100 rounded-lg cursor-pointer">
+            <FaTrophy className="w-6 h-6 " />
+            <span>Sports</span>
           </div>
           <div className="p-2 flex items-center gap-4 hover:bg-gray-100 rounded-lg cursor-pointer">
             <FaTrophy className="w-6 h-6 " />

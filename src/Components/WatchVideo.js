@@ -31,9 +31,9 @@ const WatchVideo = () => {
   }, []);
 
   return (
-    <div>
+    <div className="p-8">
       <div className="flex">
-        <div className="m-6 p-4">
+        <div className="m-6 p-4 w-4/5">
           <iframe
             className="border-2 border-gray-500 rounded-lg bg-gray-300"
             width="1000"
@@ -47,7 +47,7 @@ const WatchVideo = () => {
           <CommentContainer />
         </div>
         <div>
-          <div className="mb-0 m-9 mx-2 w-full border border-black h-[552px] rounded-lg bg-slate-200 overflow-y-scroll">
+          <div className="mb-0 m-9 mx-2 w-full border border-black h-[502px] rounded-lg bg-slate-200 overflow-y-scroll">
             <LiveChat />
           </div>
           <form
@@ -61,6 +61,7 @@ const WatchVideo = () => {
               );
               console.log("onsubmit" + liveMessage);
             }}
+            className='border-2 border-gray-500 rounded-lg m-4 w-full'
           >
             <input
               type="text"
@@ -70,7 +71,7 @@ const WatchVideo = () => {
                 setLiveMessage(e.target.value);
               }}
             />
-            <button className="bg-green-400 m-2 p-1 rounded-sm">Send</button>
+            <button className="bg-green-400 m-2 p-1 rounded-md">Send</button>
           </form>
           <VideoSuggestion key={videoIndex} info={videos[videoIndex]} />
         </div>

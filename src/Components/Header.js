@@ -51,7 +51,7 @@ const Header = () => {
   return (
     <div className="grid grid-flow-col h-auto bg-white w-screen shadow ">
       <div className="flex col-span-2  ">
-        <FaBars className="h-6 w-6 self-center col-span-1 m-2" />
+        <FaBars className="h-6 w-6 self-center col-span-1 m-2 cursor-pointer" onClick={() => toggleMenuHandler()} />
         <a href="/">
           <img
             className="h-16 self-center col-span-3 m-2"
