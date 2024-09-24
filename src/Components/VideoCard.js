@@ -45,7 +45,7 @@ export const VideoCard = ({ info }) => {
 // YouTube Ad Video Card
 export const AdVideo = ({ info }) => {
   return (
-    <div className="w-[310px] h-[280px] m-1 my-2 rounded-sm shadow-sm border-gray-300 border-4  p-2">
+    <div className="w-[310px] h-[280px] m-1 my-2 rounded-md shadow-sm border-gray-300 border-4  p-2">
       <img
         className="rounded-md w-full h-[160px] object-cover"
         src={info?.snippet?.thumbnails?.medium?.url}

@@ -61,17 +61,17 @@ const WatchVideo = () => {
               );
               console.log("onsubmit" + liveMessage);
             }}
-            className='border-2 border-gray-500 rounded-lg m-4 w-full'
+            className='border-2 border-gray-500 rounded-lg w-full flex my-4'
           >
             <input
               type="text"
-              className="w-5/6 border cursor-text p-1 m-1"
+              className="w-4/6 border cursor-text p-1 m-1"
               value={liveMessage}
               onChange={(e) => {
                 setLiveMessage(e.target.value);
               }}
             />
-            <button className="bg-green-400 m-2 p-1 rounded-md">Send</button>
+            <button className="bg-green-400 m-2 p-1 rounded-md w-2/6">Send</button>
           </form>
           <VideoSuggestion key={videoIndex} info={videos[videoIndex]} />
         </div>
